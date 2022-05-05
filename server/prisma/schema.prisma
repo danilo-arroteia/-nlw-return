@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// uuid = Universal Unique ID
+
+// Snowflake ID =
+
+model Feedback {
+  id String @id @default(uuid()) // único PK ( Primary Key )
+
+  type       String
+  comment    String
+  screenshot String?
+
+
+  @@map("feedbacks")
+}
