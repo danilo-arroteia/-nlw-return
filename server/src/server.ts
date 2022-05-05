@@ -1,16 +1,35 @@
-import express from 'express';
+import express from "express";
+import { prisma } from "./prisma";
 
 const app = express();
-const port = 3333;
 
-app.get('/users', (req, res) => {
-    return res.send('Hello World');
-})
+app.use(express.json());
 
-app.listen(port, () =>{
-    console.log(`HTTP server running! on port ${port}`);
+// GET, POST, PUT, PATCH, DELETE
+
+// GET = Buscar informações
+// POST = Cadastrar informações
+// PUT = Atualizar informações de uma entidade
+// PATCH = Atualizar uma informação única de um entidade
+// DELETE = Deletar uma informação
+
+app.post("/feedbacks", async (req, res) => {
+  const { type, comment, screenshot } = req.body;
+
+  const feedback = await prisma.feedback.create({
+    data: {
+      type,
+      comment,
+      screenshot,
+    },
+  });
+
+  return res.status(201).json({ data : feedback});
 });
 
+app.listen(3333, () => {
+  console.log("HTTP server running! on port");
+});
 
 // SQLite ( Não precisa instalar nada, salva como arquivo físico )
 // Prisma TESTE
