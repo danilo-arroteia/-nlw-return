@@ -1,21 +1,34 @@
 {
     "cSpell.words": [
+        "alguma",
         "arquivo",
         "Arroteia",
         "Atualizar",
+        "automock",
         "Buscar",
         "Cadastrar",
+        "chamada",
+        "comentario",
+        "conseguir",
+        "dentro",
         "entidade",
         "Equipe",
+        "espiões",
+        "Feeback",
         "Feedget",
         "físico",
+        "função",
         "informação",
         "informações",
         "instalar",
+        "lcov",
         "mailtrap",
         "nada",
         "precisa",
         "salva",
-        "única"
+        "Serializers",
+        "Tipo",
+        "única",
+        "unmocked"
     ]
 }
